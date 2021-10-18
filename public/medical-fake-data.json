@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Accident & Emergency",
+        "img": "https://image.freepik.com/free-photo/emergency-call-urgent-accidental-hotline-paramedic-concept_53876-125088.jpg",
+        "description": "Accident & Emergency Centre provides multidisciplinary emergency support 24 hours a day, 7 days a week with state-of-the-art facilities and expert team.  In case of any emergency, one call is enough to avail our ambulance pick-up round-the-clock.",
+        "pnone": "000 11 222 333",
+        "specialist": "Dr. Olivia Emma"
+    },
+    {
+        "id": 2,
+        "name": "Cardiology",
+        "img": "https://as1.ftcdn.net/v2/jpg/02/33/75/52/500_F_233755218_MyiwNDELehYutwyE1RRIro8ysHO4z6PB.jpg",
+        "description": "The Cardiology Department o has gained reputation for its dynamic and innovation in the diagnosis, investigation and treatment of patients with all forms of heart diseases, both generally encountered and complex cases.",
+        "pnone": "000 11 222 333",
+        "specialist": "Dr. James Benjamin"
+    },
+    {
+        "id": 3,
+        "name": "Gynaecology",
+        "img": "https://image.freepik.com/free-photo/happy-doctor-caring-about-young-pregnant-woman-hospital_186202-3471.jpg",
+        "description": "The centre has established itself as one of the most successful IVF programs in the country, offering international standard treatment in an environment of genuine care, warmth and support while maintaining total patient confidentiality.",
+        "pnone": "000 11 222 333",
+        "specialist": "Dr. Sophia Charlotte"
+    },
+    {
+        "id": 4,
+        "name": " Dermatology",
+        "img": "https://image.freepik.com/free-photo/doctor-doing-check-patient-with-skin-cancer_23-2148988511.jpg",
+        "description": "Provides advanced diagnosis and management of diseases of the skin, hair and nails, as well as venereal (sexually transmitted) diseases. The Department aims to deliver the highest quality of care to patients with skin disorders, including skin cancers, immune and allergic processes ",
+        "pnone": "000 11 222 333",
+        "specialist": "Dr. Alexander Henry"
+    },
+    {
+        "id": 5,
+        "name": "Diabetology",
+        "img": "https://image.freepik.com/free-photo/world-diabetes-day-medical-equipment-wooden-floor_1150-26692.jpg",
+        "description": " The department offers comprehensive diagnosis and management for a wide range of hormonal and metabolic disorders. Under the supervision of experienced Consultant, the department provides team-based services by working in close collaboration with specialists in allied disciplines. ",
+        "pnone": "000 11 222 333",
+        "specialist": "Dr. Michael Mason"
+    },
+    {
+        "id": 6,
+        "name": "Dietetics & Nutrition",
+        "img": "https://image.freepik.com/free-photo/medium-shot-doctor-showing-results-patient_23-2148302133.jpg",
+        "description": "Dietetics is a science that deals with the adequacy of diets during normal life cycle and modifications required during diseased conditions.The primary goal is to provide and maintain an excellent and quality dietary service in meeting patient unique needs and wants.",
+        "pnone": "000 11 222 333",
+        "specialist": "Nora Hazel"
+    }
+]
