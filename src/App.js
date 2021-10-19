@@ -15,6 +15,7 @@ import Pathology from './Pages/Pathology/Pathology';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -35,15 +36,15 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/pharmacy">
+            <PrivateRoute path="/pharmacy">
               <Pharmacy></Pharmacy>
-            </Route>
-            <Route path="/pathology">
+            </PrivateRoute>
+            <PrivateRoute path="/pathology">
               <Pathology></Pathology>
-            </Route>
-            <Route path="/servicedetails">
+            </PrivateRoute>
+            <PrivateRoute path="/servicedetails">
               <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <Error></Error>
             </Route>
