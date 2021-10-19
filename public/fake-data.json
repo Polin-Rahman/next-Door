@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Accident & Emergency",
         "img": "https://image.freepik.com/free-photo/emergency-call-urgent-accidental-hotline-paramedic-concept_53876-125088.jpg",
-        "description": "Accident & Emergency Centre provides multidisciplinary emergency support 24 hours a day, 7 days a week with state-of-the-art facilities and expert team.  In case of any emergency, one call is enough to avail our ambulance pick-up round-the-clock.",
+        "description": "Accident & Emergency Centre provides multidisciplinary emergency support 24 hours a day, 7 days a week with state-of-the-art facilities and expert team.",
         "pnone": "000 11 222 333",
         "specialist": "Dr. Olivia Emma"
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "name": " Dermatology",
         "img": "https://image.freepik.com/free-photo/doctor-doing-check-patient-with-skin-cancer_23-2148988511.jpg",
-        "description": "Provides advanced diagnosis and management of diseases of the skin, hair and nails, as well as venereal (sexually transmitted) diseases. The Department aims to deliver the highest quality of care to patients with skin disorders, including skin cancers, immune and allergic processes ",
+        "description": "provides advanced diagnosis and management of diseases of the skin, hair and nails, as well as venereal (sexually transmitted) diseases. The Department aims to deliver the highest quality of care to patients with skin disorders, including skin cancers, immune and allergic processes ",
         "pnone": "000 11 222 333",
         "specialist": "Dr. Alexander Henry"
     },
@@ -45,6 +45,6 @@
         "img": "https://image.freepik.com/free-photo/medium-shot-doctor-showing-results-patient_23-2148302133.jpg",
         "description": "Dietetics is a science that deals with the adequacy of diets during normal life cycle and modifications required during diseased conditions.The primary goal is to provide and maintain an excellent and quality dietary service in meeting patient unique needs and wants.",
         "pnone": "000 11 222 333",
-        "specialist": "Dr. Nora Hazel"
+        "specialist": "Nora Hazel"
     }
 ]
