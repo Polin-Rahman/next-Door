@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
+
+    const { signInUsingGoogle } = useAuth();
+
     return (
         <div className="login-custom">
             <div className="w-75 mx-auto">
@@ -22,9 +26,11 @@ const Login = () => {
                 <div className="d-flex justify-content-center">
                     <button type="button" class="btn btn-primary">Log In</button>
                 </div>
-                <p className="text-center mt-5 mb-3">new User ? <Link to="/register">Create Account</Link></p>
+                <p className="text-center mt-5 mb-3">New User ? <Link to="/register">Create Account</Link></p>
                 <div className="d-flex justify-content-center">
-                    <button type="button" class="btn btn-dark">Google Sign-In</button>
+                    <button
+                        onClick={signInUsingGoogle}
+                        className="btn btn-dark">Google Sign-In</button>
                 </div>
             </div>
         </div>
