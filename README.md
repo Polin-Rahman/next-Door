@@ -9,5 +9,5 @@ It's a web-based telemedicine service where users can consult a doctor in case o
    * Protected pages - Service Details, Online Pharmacy, Pathology.
    * Used Firebase for authentication (Email/Password & Google Sign In).
    * User can visit public components with out registration, need to must sign in for visiting private componenets.
-   * Used: `React`, `firebase`, `react router`, `react bootstrap` & `firebase`.
+   * Used: `react`, `react router`, `react bootstrap` & `firebase`.
     
