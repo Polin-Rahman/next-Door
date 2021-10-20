@@ -11,10 +11,13 @@ const Login = () => {
     const redirect_uri = location.state?.from || '/home';
 
     const handelGoogleLogin = () => {
+
         signInUsingGoogle()
             .then(result => {
                 history.push(redirect_uri)
             })
+
+        //.finally(() => setIsLoading(false));
     }
 
     return (
