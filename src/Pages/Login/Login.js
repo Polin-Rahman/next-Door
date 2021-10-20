@@ -1,9 +1,15 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import useCustomState from '../../hooks/useCustomState';
 import './Login.css';
 
 const Login = () => {
+
+    const auth = getAuth();
+
+    const [email, setEmail, password, setPassword] = useCustomState();
 
     const { signInUsingGoogle } = useAuth();
     const location = useLocation();
@@ -16,28 +22,48 @@ const Login = () => {
             .then(result => {
                 history.push(redirect_uri)
             })
-
-        //.finally(() => setIsLoading(false));
     }
+
+    // email pass login
+
+    const handelRegistration = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .then(result => {
+                history.push(redirect_uri)
+            })
+    }
+
+    const handelEmailChange = e => {
+        setEmail(e.target.value);
+    }
+
+    const handelPasswardChange = e => {
+        setPassword(e.target.value);
+    }
+
 
     return (
         <div className="login-custom">
-            <div className="w-75 mx-auto">
+            <div className="mx-auto">
                 <h2 className="text-center mt-5">Log In</h2>
-                <div className="mb-3 row">
-                    <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
-                    <div className="col-sm-10">
-                        <input type="text" readonly className="form-control-plaintext" id="staticEmail" value="email@example.com" />
-                    </div>
-                </div>
-                <div className="mb-3 row">
-                    <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
-                    <div className="col-sm-10">
-                        <input type="password" className="form-control" id="inputPassword" />
-                    </div>
-                </div>
-                <div className="d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary">Log In</button>
+                <div className="w-50 mx-auto">
+                    <form onSubmit={handelRegistration}>
+                        <label htmlFor="email">Email: </label>
+                        <input
+                            onBlur={handelEmailChange}
+                            type="text" name="email" className="form-control" />
+                        <label htmlFor="email">Password: </label>
+                        <input
+                            onBlur={handelPasswardChange}
+                            type="password" name="password" className="form-control" />
+                        <br />
+                        <input type="submit" value="Log In" className="btn btn-primary" />
+                    </form>
                 </div>
                 <p className="text-center mt-5 mb-3">New User ? <Link to="/register">Create Account</Link></p>
                 <div className="d-flex justify-content-center">

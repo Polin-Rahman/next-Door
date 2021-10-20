@@ -2,14 +2,15 @@ import { useEffect, useState } from "react"
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import initilizeAuthentication from "../Firebase/firebase.init";
 
+
 initilizeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
 
-    // const [isLoading, setIsLoading] = useState(true);
-
     const auth = getAuth();
+
+    // google auth
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -17,14 +18,12 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider);
     }
 
+    //logout
     const logOut = () => {
-        // setIsLoading(true);
         signOut(auth)
             .then(() => {
                 setUser({});
             })
-
-        // .finally(() => setIsLoading(false));
     }
 
     useEffect(() => {
@@ -32,8 +31,6 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
             }
-
-            // setIsLoading(false);
         });
     }, [])
 

@@ -1,29 +1,66 @@
-import React from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import useCustomState from '../../hooks/useCustomState';
 import './Register.css';
 
 const Register = () => {
-    const { signInUsingGoogle } = useAuth();
+
+    const [error, setError] = useState('')
+
+    const { user, signInUsingGoogle } = useAuth();
+
+    const auth = getAuth();
+
+    const [email, setEmail, password, setPassword] = useCustomState();
+
+    const handelRegistration = e => {
+        e.preventDefault();
+        if (password.length <= 6) {
+            setError('Password must be at list 6 charecter')
+            return;
+        }
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+
+    }
+
+    const handelEmailChange = e => {
+        setEmail(e.target.value);
+    }
+
+    const handelPasswardChange = e => {
+        setPassword(e.target.value);
+    }
 
     return (
         <div className="register-custom">
-            <div className="w-75 mx-auto">
+            <div className="mx-auto">
                 <h2 className="text-center mt-5">Please Register</h2>
-                <div className="mb-3 row">
-                    <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
-                    <div className="col-sm-10">
-                        <input type="text" readonly className="form-control-plaintext" id="staticEmail" value="email@example.com" />
+                <div className="w-50 mx-auto">
+                    <form onSubmit={handelRegistration}>
+                        <label htmlFor="email">Email: </label>
+                        <input
+                            onBlur={handelEmailChange}
+                            type="text" name="email" className="form-control" />
+                        <label htmlFor="email">Password: </label>
+                        <input
+                            onBlur={handelPasswardChange}
+                            type="password" name="password" className="form-control" />
+                        <br />
+                        <input type="submit" value="Register" className="btn btn-warning" />
+                    </form>
+                    <div className="text-danger">
+                        {error}
                     </div>
-                </div>
-                <div className="mb-3 row">
-                    <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
-                    <div className="col-sm-10">
-                        <input type="password" className="form-control" id="inputPassword" />
-                    </div>
-                </div>
-                <div className="d-flex justify-content-center">
-                    <button type="button" class="btn btn-warning">Register</button>
+                    {
+                        user.email && <p className="text-success">Registration is Successfully done !!</p>
+                    }
+
                 </div>
                 <p className="text-center mt-3 mb-1">Already Registered ? <Link to="/login">Log In</Link></p>
                 <p className="text-center mb-2">Or</p>
